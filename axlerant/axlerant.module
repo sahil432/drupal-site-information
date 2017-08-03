@@ -79,7 +79,7 @@ function myjsondata($node) {
 
 function myjson_representation($sitesapi, $nid) {
   $node = node_load($nid);
-if(variable_get('siteapikey')!='No API Key yet' && $sitesapi == variable_get('siteapikey') && $node->type == 'page' && $node->nid) {
+if(variable_get('siteapikey')!='No API Key yet' && $node->nid && $sitesapi == variable_get('siteapikey') && $node->type == 'page' ) {
    drupal_json_output( $node );
 }
 else {
